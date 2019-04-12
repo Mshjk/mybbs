@@ -1,0 +1,49 @@
+<extend name="Index/index"/><block name="main">
+<div class="main-wrap">
+	<div class="crumb-wrap">
+		<div class="crumb-list">
+			<i class="icon-font"></i><a href="/index.php/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">版块管理</span>
+		</div>
+	</div>
+	<div class="result-wrap">
+		<table class="result-tab" width="100%">
+		<tr>
+			<th>
+				版块id
+			</th>
+			<th>
+				版块名称
+			</th>
+			<th>
+				所属分区
+			</th>
+			<th>
+				版主
+			</th>
+			<th>
+				操作
+			</th>
+		</tr>
+		<?php foreach($cates as $cate): ?>
+		<tr>
+			<td>
+				<?=$cate['cid']?>
+			</td>
+			<td>
+				<?=$cate['cname']?>
+			</td>
+			<td>
+				<?=$parts[$cate['pid']]?>
+			</td>
+			<td>
+				<?=$users[$cate['uid']]?>
+			</td>
+			<td>
+				<a class="link-update" href="/index.php/admin/cate/edit/cid/<?=$cate['cid']?>">修改</a>
+				<a class="link-del" href="/index.php/admin/cate/del/cid/<?=$cate['cid']?>">删除</a>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</div>
+</div>
+</block>

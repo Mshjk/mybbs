@@ -1,0 +1,79 @@
+<extend name="Index/index"/><block name="main">
+<form action="/index.php/admin/user/update/uid/<?=$user['uid']?>
+    "
+    method="post" id="myform" name="myform" enctype="multipart/form-data">
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list">
+                <i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">用户管理</a><span class="crumb-step">&gt;</span><span>修改用户</span>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="/index.php/admin/user/update/uid/<?=$user['uid']?>
+                    " method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                    <tbody>
+                    <tr>
+                        <th width="120">
+                            <i class="require-red">*</i>权限：
+                        </th>
+                        <td>
+                            <select name="auth" id="catid" class="required">
+                                <option value="">请选择</option>
+                                <option <?php if($user['auth'] ="=" 1){echo 'selected';} ?> value="1">超级管理员</option>
+                                <option <?php if($user['auth']="=2){echo" 'selected';} ?> value="2">普通管理员</option>
+                                <option <?php if($user['auth']="=3){echo" 'selected';} ?> value="3">普通用户</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <i class="require-red">*</i>用户名：
+                        </th>
+                        <td>
+                            <input class="common-text required" id="title" name="uname" size="50" value="<?=$user['uname']?>" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <i class="require-red">*</i>年龄：
+                        </th>
+                        <td>
+                            <input class="common-text" name="age" size="50" value="<?=$user['age']?>" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <i class="require-red">*</i>性别：
+                        </th>
+                        <td>
+                            <input type="radio" name="sex" value="m" <?php if($user['sex'] ="=" 'm') { echo 'checked'; } ?> >男 <input type="radio" name="sex" value="w" <?php if($user['sex'] ="=" 'w') { echo 'checked'; } ?> >女 <input type="radio" name="sex" value="x" <?php if($user['sex'] ="=" 'x') { echo 'checked'; } ?> >保密
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <i class="require-red">*</i>缩略图：
+                        </th>
+                        <td>
+                            <input type="hidden" name="yimg" value="<?=$yimg?>">
+                            <input name="uface" id="" type="file">
+                            <img src="/<?=$user['uface']?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                        </th>
+                        <td>
+                            <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                            <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+</block>

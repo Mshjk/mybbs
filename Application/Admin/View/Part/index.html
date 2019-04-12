@@ -1,0 +1,38 @@
+<extend name="Index/index"/><block name="main">
+<div class="main-wrap">
+	<div class="crumb-wrap">
+		<div class="crumb-list">
+			<i class="icon-font"></i><a href="/index.php/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">分区管理</span>
+		</div>
+	</div>
+	<div class="result-wrap">
+		<table class="result-tab" width="100%">
+		<tr>
+			<th>
+				分区id
+			</th>
+			<th>
+				分区名称
+			</th>
+			<th>
+				操作
+			</th>
+		</tr>
+		<?php foreach($parts as $part): ?>
+		<tr>
+			<td>
+				<?=$part['pid']?>
+			</td>
+			<td>
+				<?=$part['pname']?>
+			</td>
+			<td>
+				<a class="link-update" href="/index.php/admin/part/edit/pid/<?=$part['pid']?>">修改</a>
+				<a class="link-del" href="/index.php/admin/part/del/pid/<?=$part['pid']?>">删除</a>
+				<a href="/index.php/admin/cate/show/pid/<?=$part['pid']?>">查看该版块分区</a>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</div>
+</div>
+</block>

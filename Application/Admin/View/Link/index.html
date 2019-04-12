@@ -1,0 +1,55 @@
+<extend name="Index/index"/><block name="main">
+<div class="main-wrap">
+	<div class="crumb-wrap">
+		<div class="crumb-list">
+			<i class="icon-font"></i><a href="/index.php/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">链接管理</span>
+		</div>
+	</div>
+	<div class="result-wrap">
+		<table class="result-tab" width="100%">
+		<tr>
+			<th>
+				链接id
+			</th>
+			<th>
+				链接网站名称
+			</th>
+			<th>
+				链接网站地址
+			</th>
+			<th>
+				链接logo
+			</th>
+			<th>
+				链接描述
+			</th>
+			<th>
+				操作
+			</th>
+		</tr>
+		<?php foreach($links as $link): ?>
+		<tr>
+			<td>
+				<?=$link['lid']?>
+			</td>
+			<td>
+				<?=$link['lname']?>
+			</td>
+			<td>
+				<?=$link['link']?>
+			</td>
+			<td>
+				<img src="/<?=$link['lpic']?>">
+			</td>
+			<td>
+				<?=$link['lmsg']?>
+			</td>
+			<td>
+				<a class="link-update" href="/index.php/admin/link/edit/lid/<?=$link['lid']?>">修改</a>
+				<a class="link-del" href="/index.php/admin/link/del/lid/<?=$link['lid']?>">删除</a>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</div>
+</div>
+</block>
