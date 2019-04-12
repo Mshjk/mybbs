@@ -29,8 +29,8 @@
 		<!--logo、登陆部分start-->
 		<div id="logo_login" style="position: relative">
 			<!--logo部分start-->
-			<div id="logo">
-			</div>
+			<a href="/index.php/home"><div id="logo">
+			</div></a>
 			<!--logo部分end-->
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
@@ -149,46 +149,109 @@
 		<!--小提示部分end-->
 	</div>
 	<!--网页头部end-->
-	<!--内容部分start-->
-	<div class="content">
-		<!--分区部分start-->
-		<?php foreach($cates as $cate): ?>
-		<div class="section">
-			<!--分区标题部分start-->
-			<div class="section_title">
-				<span class="section_title_left"><?=$cate['cname']?>
-				</span>
-				<span class="section_title_right">分区版主：<a href=""><?=$users[$cate['uid']]?>
-				</a></span>
-			</div>
-			<!--分区标题部分end-->
-			<!--分区内容部分start-->
-			<div class="section_content">
-				<table cellspacing="0" celpadding="0">
-				<tr>
-					<td width="33%">
-						<span class="section_content_ico">
-						<img src="/Public/Home/images/forum_new.gif" title="Discuz!程序发布"/>
-						</span>
-						<dl>
-							<dd class="dd_title"><a href=''>aa</a></dd>
-							<dd>
-							<em>主题：54</em>,
-							<em>帖子：244</em>
-							</dd>
-							<dd>
-							<a href="">最后发表: 2012-11-1 10:22</a>
-							</dd>
-						</dl>
-					</td>
-				</tr>
-				</table>
-			</div>
-			<!--分区内容部分end-->
+	<!-- 首页主体内容, 如果没有点击版块则显示所有版块下的所有分区 -->
+	<?php
+ if ($pid != 'all') { ?>
+		<div class="content">
+	<!--分区部分start-->
+	<div class="section">
+		<!--分区标题部分start-->
+		<div class="section_title">
+			<span class="section_title_left"><?=$opart['pname']?>
+			</span>
+			<!-- <span class="section_title_right">分区版主：<a href=""><?=$users[$cate['uid']]?>
+			</a></span> -->
 		</div>
-		<?php endforeach; ?>
+		<!--分区标题部分end-->
+		<!--分区内容部分start-->
+		<div class="section_content">
+			<table cellspacing="0" celpadding="0">
+			<tr>
+				<?php
+ $i = 0; foreach($cates as $cate): if($cate['pid'] == $opart['pid']): ?>
+				<td>
+					<span class="section_content_ico">
+					<img src="/Public/Home/images/forum_new.gif" title="<?=$cate['cname']?>"/>
+					</span>
+					<dl>
+						<dd class="dd_title"><a href=''><?=$cate['cname']?>
+						</a></dd>
+						<dd>
+						<em>主题：54</em>,
+						<em>帖子：244</em>
+						</dd>
+						<dd>
+						<a href="">最后发表: 2012-11-1 10:22</a>
+						</dd>
+					</dl>
+				</td>
+				<?php
+ $i++; endif; ?>
+				<?php  if ($i % 3 == 0) { echo '</tr>'; echo '<tr>'; } ?>
+				<?php endforeach; ?>
+			</tr>
+			</table>
+		</div>
+		<!--分区内容部分end-->
 	</div>
-		<!--分区部分end-->
+</div>
+	<?php } else { ?>
+		
+
+
+
+
+
+
+
+
+
+
+<!--内容部分start-->
+<div class="content">
+	<!--分区部分start-->
+	<?php foreach($parts as $part): ?>
+	<div class="section">
+		<!--分区标题部分start-->
+		<div class="section_title">
+			<span class="section_title_left"><?=$part['pname']?>
+			</span>
+		</div>
+		<!--分区标题部分end-->
+		<!--分区内容部分start-->
+		<div class="section_content">
+			<table cellspacing="0" celpadding="0">
+			<tr>
+				<?php  $i = 0; foreach($cates as $cate): ?>
+					<?php if ($cate['pid'] == $part['pid']): ?>
+				<td>
+					<span class="section_content_ico">
+					<img src="/Public/Home/images/forum_new.gif" title="Discuz!程序发布"/>
+					</span>
+					<dl>
+						<dd class="dd_title"><a href=''><?=$cate['cname']?></a></dd>
+						<dd>
+						<em>主题：54</em>,
+						<em>帖子：244</em>
+						</dd>
+						<dd>
+						<a href="">最后发表: 2012-11-1 10:22</a>
+						</dd>
+					</dl>
+				</td>
+				<?php
+ $i++; endif; ?>
+				<?php  if ($i % 3 == 0) { echo '</tr>'; echo '<tr>'; } ?>
+				<?php endforeach; ?>
+			</tr>
+			</table>
+		</div>
+		<!--分区内容部分end-->
+	</div>
+	<?php endforeach; ?>
+</div>
+	<?php } ?>
+	<!--分区部分end-->
 		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->

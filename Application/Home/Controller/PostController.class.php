@@ -3,7 +3,7 @@ namespace Home\Controller;
 
 use Think\Controller;
 
-class PostController extends Controller
+class PostController extends CommonController
 {
 	public function create()
 	{
@@ -11,7 +11,7 @@ class PostController extends Controller
 		if (empty($_SESSION['flag'])) {
 			$this->error('请先登录', '/');
 		}
-
+		$this->getData();
 		$this->display();
 	}
 }

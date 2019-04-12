@@ -29,8 +29,8 @@
 		<!--logo、登陆部分start-->
 		<div id="logo_login" style="position: relative">
 			<!--logo部分start-->
-			<a href="/index.php/home"><div id="logo">
-			</div></a>
+			<div id="logo">
+			</div>
 			<!--logo部分end-->
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
@@ -149,34 +149,6 @@
 		<!--小提示部分end-->
 	</div>
 	<!--网页头部end-->
-	<!--内容部分start-->
-		<div class="content">			
-			<form action="/index.php/home/login//register" method="post">
-				<table align="center" width="300" height="60">
-					<tr>
-						<td><label>用户名:</label></td>
-						<td><input type="text" name="uname"></td>
-					</tr>
-					<tr>
-						<td><label>密码:</label></td>
-						<td><input type="password" name="upwd"></td>
-					</tr>
-					<tr>
-						<td><label>确认密码:</label></td>
-						<td><input type="password" name="reupwd"></td>
-					</tr>
-					<tr>
-						<td><label>手机号:</label></td>
-						<td><input type="text" name="tel"></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center"><input type="submit" value="注册"></td>
-					</tr>
-				</table>
-			</form>
-				
-		</div>
-		<!--帖子列表部分end-->
 		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->
