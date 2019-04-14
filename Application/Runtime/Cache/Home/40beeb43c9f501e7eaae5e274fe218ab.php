@@ -29,8 +29,8 @@
 		<!--logo、登陆部分start-->
 		<div id="logo_login" style="position: relative">
 			<!--logo部分start-->
-			<div id="logo">
-			</div>
+			<a href="/index.php/home"><div id="logo">
+			</div></a>
 			<!--logo部分end-->
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
@@ -149,6 +149,48 @@
 		<!--小提示部分end-->
 	</div>
 	<!--网页头部end-->
+<!--内容部分start-->
+<div class="content">
+	<form action="/index.php/home/post/save" method="post">
+		<table height="60">
+		<tr>
+			<td>
+				<label>标题:</label>
+			</td>
+			<td>
+				<input type="text" name="title" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>内容：</label>
+			</td>
+			<td>
+				<textarea name="content" rows="12" cols="80"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>所属版块：</label>
+			</td>
+			<td>
+				<select name="cid">
+					<?php
+ foreach($cates as $k=>$v): ?>
+					<option value="<?=$k?>" <?php if($cid==$k) { echo 'selected'; } ?>><?=$v?></option>
+					<?php endforeach; ?>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="发贴" style="width:100px;height:30px;">
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<!--内容部分end-->
 		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->
@@ -160,7 +202,7 @@
 			<?php  foreach($links as $link): $link['lpic'] = getSm($link['lpic']); ?>
 			<div class="fri_content">
 				<div class="fri_left">
-					<a href="http://<?=$link['link']?>"><img width="50px" src="/<?=$link['lpic']?>" /></a>
+					<a href="https://<?=$link['link']?>"><img width="50px" src="/<?=$link['lpic']?>" /></a>
 				</div>
 				<div class="fri_right">
 					<p>

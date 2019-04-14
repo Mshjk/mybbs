@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 <!--内容部分start-->
 <div class="content">
 	<!--分区部分start-->
@@ -31,10 +20,10 @@
 					<?php if ($cate['pid'] == $part['pid']): ?>
 				<td>
 					<span class="section_content_ico">
-					<img src="/Public/Home/images/forum_new.gif" title="Discuz!程序发布"/>
+					<a href=""><img src="/Public/Home/images/forum_new.gif" title="Discuz!程序发布"/>
 					</span>
 					<dl>
-						<dd class="dd_title"><a href=''><?=$cate['cname']?></a></dd>
+						<dd class="dd_title"><a href="/index.php/home/post/index/cid/<?=$cate['cid']?>"><?=$cate['cname']?></a></dd>
 						<dd>
 						<em>主题：54</em>,
 						<em>帖子：244</em>

@@ -148,100 +148,68 @@
 		</div>
 		<!--小提示部分end-->
 	</div>
-	<!--网页头部end-->
-	<!-- 首页主体内容, 如果没有点击版块则显示所有版块下的所有分区 -->
-	<?php
- if ($pid != 'all') { ?>
-		<div class="content">
-	<!--分区部分start-->
-	<div class="section">
-		<!--分区标题部分start-->
-		<div class="section_title">
-			<span class="section_title_left"><?=$opart['pname']?>
-			</span>
-			<!-- <span class="section_title_right">分区版主：<a href=""><?=$users[$cate['uid']]?>
-			</a></span> -->
-		</div>
-		<!--分区标题部分end-->
-		<!--分区内容部分start-->
-		<div class="section_content">
-			<table cellspacing="0" celpadding="0">
-			<tr>
-				<?php
- $i = 0; foreach($cates as $cate): if($cate['pid'] == $opart['pid']): ?>
-				<td>
-					<span class="section_content_ico">
-					<img src="/Public/Home/images/forum_new.gif" title="<?=$cate['cname']?>"/>
-					</span>
-					<dl>
-						<dd class="dd_title"><a href="/index.php/home/post/index/cid/<?=$cate['cid']?>"><?=$cate['cname']?>
-						</a></dd>
-						<dd>
-						<em>主题：54</em>,
-						<em>帖子：244</em>
-						</dd>
-						<dd>
-						<a href="">最后发表: 2012-11-1 10:22</a>
-						</dd>
-					</dl>
-				</td>
-				<?php
- $i++; endif; ?>
-				<?php  if ($i % 3 == 0) { echo '</tr>'; echo '<tr>'; } ?>
-				<?php endforeach; ?>
-			</tr>
-			</table>
-		</div>
-		<!--分区内容部分end-->
-	</div>
-</div>
-	<?php } else { ?>
-		<!--内容部分start-->
+	<!--网页头部end--><!--内容部分start-->
 <div class="content">
-	<!--分区部分start-->
-	<?php foreach($parts as $part): ?>
-	<div class="section">
-		<!--分区标题部分start-->
-		<div class="section_title">
-			<span class="section_title_left"><?=$part['pname']?>
-			</span>
+	<!--发帖按钮start-->
+	<div class="send_btn">
+		<div class="send">
+			<a href="/index.php/home/post/create/cid/<?=$_GET['cid']?>">
+				<img src="/public/home/images/pn_post.png"/>
+			</a>
 		</div>
-		<!--分区标题部分end-->
-		<!--分区内容部分start-->
-		<div class="section_content">
-			<table cellspacing="0" celpadding="0">
+		<div style="clear:both">
+		</div>
+	</div>
+	<!--发帖按钮end-->
+	<!--帖子列表部分start-->
+	<div class="post_list">
+		<!--帖子列表标题部分start-->
+		<div class="post_title">
+			<table cellspacing="0" cellpadding="0" width='100%'>
 			<tr>
-				<?php  $i = 0; foreach($cates as $cate): ?>
-					<?php if ($cate['pid'] == $part['pid']): ?>
-				<td>
-					<span class="section_content_ico">
-					<a href=""><img src="/Public/Home/images/forum_new.gif" title="Discuz!程序发布"/>
-					</span>
-					<dl>
-						<dd class="dd_title"><a href="/index.php/home/post/index/cid/<?=$cate['cid']?>"><?=$cate['cname']?></a></dd>
-						<dd>
-						<em>主题：54</em>,
-						<em>帖子：244</em>
-						</dd>
-						<dd>
-						<a href="">最后发表: 2012-11-1 10:22</a>
-						</dd>
-					</dl>
-				</td>
-				<?php
- $i++; endif; ?>
-				<?php  if ($i % 3 == 0) { echo '</tr>'; echo '<tr>'; } ?>
-				<?php endforeach; ?>
+				<th class="list_title">
+					帖子标题
+				</th>
+				<th class="list_author">
+					作者
+				</th>
+				<th class="list_count">
+					回复/查看
+				</th>
+				<th class="list_ptime">
+					最后发表
+				</th>
 			</tr>
 			</table>
 		</div>
-		<!--分区内容部分end-->
+		<!--帖子列表标题部分end-->
+		<!--帖子列表内容部分start-->
+		<div class="post_content">
+			<table cellspacing="0" cellpadding="0" width='100%'>
+			<?php foreach($posts as $post): ?>
+			<tr>
+				<td class="list_title">
+					<a href="post.html"><?=$post['title']?>
+					</a>
+				</td>
+				<td class="list_author">
+					<?=$users[$post['uid']]?>
+				</td>
+				<td class="list_count">
+					<?php echo $post['rep_cnt'] . '/' . $post['view_cnt']; ?>
+				</td>
+				<td class="list_ptime">
+					<?php echo date('Y-m-d H:i:s', $post['updated_at']) ?>
+				</td>
+			</tr>
+			<?php endforeach ?>
+			</table>
+		</div>
+		<!--帖子列表内容部分end-->
 	</div>
-	<?php endforeach; ?>
+	<!--帖子列表部分end-->
 </div>
-	<?php } ?>
-	<!--分区部分end-->
-		<!--友情链接部分start-->
+<!--内容部分end-->		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->
 			<div id="fri_title">
