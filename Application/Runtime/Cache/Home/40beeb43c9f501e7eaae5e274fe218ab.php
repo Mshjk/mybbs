@@ -6,6 +6,8 @@
 <meta name="keywords" content="论坛,PHP">
 <meta name="description" content="最大的社区网站">
 <meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/style_1_common.css" /> 
+  <link rel="stylesheet" type="text/css" href="/Public/Home/css/style_1_forum_viewthread.css" /> 
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/css.css">
 </head>
@@ -35,6 +37,10 @@
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
 			<div id="login" style="left:800px; top: 50px; position: absolute">
+				<?php
+ if ($_SESSION['userInfo']['auth'] < 3) { ?>
+				<a href="/index.php/admin/index">进入后台 | </a>
+				<?php } ?>
 				<a href=""><?=$_SESSION['userInfo']['uname']?>
 				</a> | <a href="/index.php/home/login/logout">退出登录</a>
 			</div>

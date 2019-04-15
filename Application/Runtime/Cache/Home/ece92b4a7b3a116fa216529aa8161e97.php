@@ -6,6 +6,8 @@
 <meta name="keywords" content="论坛,PHP">
 <meta name="description" content="最大的社区网站">
 <meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/style_1_common.css" /> 
+  <link rel="stylesheet" type="text/css" href="/Public/Home/css/style_1_forum_viewthread.css" /> 
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/css.css">
 </head>
@@ -35,7 +37,11 @@
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
 			<div id="login" style="left:800px; top: 50px; position: absolute">
-				<a href=""><?=$_SESSION['userInfo']['uname']?>
+				<?php
+ if ($_SESSION['userInfo']['auth'] < 3) { ?>
+				<a href="/index.php/admin/index">进入后台 | </a>
+				<?php } ?>
+				<a href=""><?=$_SESSION['userInfo']['username']?>
 				</a> | <a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
@@ -189,7 +195,7 @@
 			<?php foreach($posts as $post): ?>
 			<tr>
 				<td class="list_title">
-					<a href="post.html"><?=$post['title']?>
+					<a href="/index.php/home/reply/create/pid/<?=$post['pid']?>"><?=$post['title']?>
 					</a>
 				</td>
 				<td class="list_author">

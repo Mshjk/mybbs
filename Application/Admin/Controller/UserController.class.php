@@ -98,7 +98,7 @@ class UserController extends CommonController
 		// 确认重复命名
 		$res = M('bbs_user')->where("uname='{$data['uname']}'")->find();
 		if ($res) {
-			$this->error("用户名已经存在");
+			$this->error("账号名已经存在");
 		} 
 
 		// 加密密码

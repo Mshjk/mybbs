@@ -128,6 +128,9 @@
                         ID
                     </th>
                     <th>
+                        账号名
+                    </th>
+                    <th>
                         用户名
                     </th>
                     <th>
@@ -163,6 +166,9 @@
                     </td>
                     <td>
                         <?=$v['uname']?>
+                    </td>
+                    <td>
+                        <?=$v['username']?>
                     </td>
                     <td>
                         <img src="/<?=$v['uface']?>" />

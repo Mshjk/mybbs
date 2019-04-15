@@ -93,10 +93,18 @@
                 </tr>
                 <tr>
                     <th>
-                        <i class="require-red">*</i>用户名：
+                        <i class="require-red">*</i>账号名：
                     </th>
                     <td>
                         <input class="common-text required" id="title" name="uname" size="50" value="" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="require-red">*</i>用户名：
+                    </th>
+                    <td>
+                        <input class="common-text required" id="title" name="username" size="50" value="" type="text">
                     </td>
                 </tr>
                 <tr>

@@ -6,6 +6,8 @@
 <meta name="keywords" content="论坛,PHP">
 <meta name="description" content="最大的社区网站">
 <meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/style_1_common.css" /> 
+  <link rel="stylesheet" type="text/css" href="/Public/Home/css/style_1_forum_viewthread.css" /> 
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/css.css">
 </head>
@@ -35,7 +37,11 @@
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
 			<div id="login" style="left:800px; top: 50px; position: absolute">
-				<a href=""><?=$_SESSION['userInfo']['uname']?>
+				<?php
+ if ($_SESSION['userInfo']['auth'] < 3) { ?>
+				<a href="/index.php/admin/index">进入后台 | </a>
+				<?php } ?>
+				<a href=""><?=$_SESSION['userInfo']['username']?>
 				</a> | <a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
@@ -150,33 +156,47 @@
 	</div>
 	<!--网页头部end-->
 	<!--内容部分start-->
-		<div class="content">			
-			<form action="/index.php/home/login//register" method="post">
-				<table align="center" width="300" height="60">
-					<tr>
-						<td><label>用户名:</label></td>
-						<td><input type="text" name="uname"></td>
-					</tr>
-					<tr>
-						<td><label>密码:</label></td>
-						<td><input type="password" name="upwd"></td>
-					</tr>
-					<tr>
-						<td><label>确认密码:</label></td>
-						<td><input type="password" name="reupwd"></td>
-					</tr>
-					<tr>
-						<td><label>手机号:</label></td>
-						<td><input type="text" name="tel"></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center"><input type="submit" value="注册"></td>
-					</tr>
-				</table>
-			</form>
-				
-		</div>
-		<!--帖子列表部分end-->
+	<div class="content">			
+		<form action="/index.php/home/login/register" method="post">
+			<table align="center" width="300" height="60">
+				<tr>
+					<td><label>帐户名(登录账号):</label></td>
+					<td><input type="text" name="uname"></td>
+				</tr>
+				<tr>
+					<td><label>用户名:</label></td>
+					<td><input type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td><label>性别:</label></td>
+					<td>
+						<select name="sex">
+							<option value="0" selected>女</option>
+							<option value="1">男</option>
+							<option value="2">保密</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label>密码:</label></td>
+					<td><input type="password" name="upwd"></td>
+				</tr>
+				<tr>
+					<td><label>确认密码:</label></td>
+					<td><input type="password" name="reupwd"></td>
+				</tr>
+				<tr>
+					<td><label>手机号:</label></td>
+					<td><input type="text" name="tel"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="注册"></td>
+				</tr>
+			</table>
+		</form>
+			
+	</div>
+	<!--帖子列表部分end-->
 		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->
@@ -188,7 +208,7 @@
 			<?php  foreach($links as $link): $link['lpic'] = getSm($link['lpic']); ?>
 			<div class="fri_content">
 				<div class="fri_left">
-					<a href="http://<?=$link['link']?>"><img width="50px" src="/<?=$link['lpic']?>" /></a>
+					<a href="https://<?=$link['link']?>"><img width="50px" src="/<?=$link['lpic']?>" /></a>
 				</div>
 				<div class="fri_right">
 					<p>

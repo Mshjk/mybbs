@@ -23,11 +23,11 @@ class LoginController extends CommonController
         }
         
         $user   = M('bbs_user');
-        // 用户名是否重复
+        // 账户名是否重复
         $runame = $user->where("uname='{$data['uname']}'")->find();
         if ($runame) {
             // 用户名重复
-            $this->error('用户已存在');
+            $this->error('账户已存在');
         }
 
         // 密码是否一致
@@ -38,6 +38,7 @@ class LoginController extends CommonController
         $data['upwd']       = password_hash($data['upwd'], PASSWORD_DEFAULT);
         $data['created_at'] = time();
         $data['auth']       = 3;
+        $data['uface']      = 'Public/Uploads/User/no.jpg';
         $row = $user->add( $data );
         if ($row) {
          $this->success('注册成功!', '/');
@@ -64,8 +65,8 @@ class LoginController extends CommonController
     // 退出登录
     public function logout()
     {
-        $_SESSION['userinfo'] = NULL;
-        $_SESSION['flag'] = false;
+        $_SESSION['userInfo'] = NULL;
+        $_SESSION['flag']     = false;
         $this->success('成功退出...', '/index.php/home/index/index', 1);
     }
 }
