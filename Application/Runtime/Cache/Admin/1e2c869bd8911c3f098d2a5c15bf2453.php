@@ -63,6 +63,13 @@
                     <li><a href="/index.php/admin/link/index"><i class="icon-font">&#xe037;</i>查看友情链接</a></li>
                 </ul>
                 </li>
+                <li>
+                <a href="#"><i class="icon-font">&#xe018;</i>贴子管理</a>
+                <ul class="sub-menu">
+                    <li><a href="/index.php/admin/post/index"><i class="icon-font">&#xe037;</i>查看贴子</a></li>
+                </ul>
+                </li>
+                <li>
             </ul>
         </div>
     </div>

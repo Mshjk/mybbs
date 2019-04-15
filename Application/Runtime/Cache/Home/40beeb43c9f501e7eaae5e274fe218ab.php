@@ -41,7 +41,7 @@
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>
 				<?php } ?>
-				<a href=""><?=$_SESSION['userInfo']['uname']?>
+				<a href=""><?=$_SESSION['userInfo']['username']?>
 				</a> | <a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
@@ -181,11 +181,19 @@
 			</td>
 			<td>
 				<select name="cid">
-					<?php
- foreach($cates as $k=>$v): ?>
-					<option value="<?=$k?>" <?php if($cid==$k) { echo 'selected'; } ?>><?=$v?></option>
-					<?php endforeach; ?>
-				</select>
+                        	<?php foreach($oparts as $part): ?>
+                        	<option disabled>
+                        		<?=$part['pname']?>
+                        	</option>
+                            	<?php foreach($ocates as $cate): ?>
+	                            	<?php  if ($cate['pid'] == $part['pid']) : ?>
+	                            		<option value="<?=$cate['cid']?>" <?php if($cate['cid']==$cid) { echo 'selected'; } ?> >
+	                            			----<?=$cate['cname']?>
+	                            		</option>
+	                            	<?php endif; ?>
+                            	<?php endforeach; ?>
+                        	<?php endforeach; ?>
+                </select>
 			</td>
 		</tr>
 		<tr>

@@ -83,7 +83,7 @@
     <div class="main-wrap">
         <div class="crumb-wrap">
             <div class="crumb-list">
-                <i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span>
+                <i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">贴子管理</span>
             </div>
         </div>
         <div class="search-wrap">
@@ -91,25 +91,40 @@
                 <form action="/index.php" method="get">
                     <table class="search-tab">
                     <input type="hidden" name="m" value="admin">
-                    <input type="hidden" name="c" value="user">
+                    <input type="hidden" name="c" value="post">
                     <input type="hidden" name="a" value="index">
                     <tr>
-                        <th width="120">
-                            选择性别:
+                    	<th width="70">
+                            版块:
                         </th>
                         <td>
-                            <select name="sex" id="">
-                                <option value="">全部</option>
-                                <option value="m">男</option>
-                                <option value="w">女</option>
-                                <option value="x">保密</option>
+                            <select name="cid">
+                            	<option value="" selected>--请选择--</option>
+                            	<?php foreach($parts as $part): ?>
+                            	<option disabled>
+                            		<?=$part['pname']?>
+                            	</option>
+	                            	<?php foreach($cates as $cate): ?>
+		                            	<?php  if ($cate['pid'] == $part['pid']) : ?>
+		                            		<option value="<?=$cate['cid']?>">
+		                            			----<?=$cate['cname']?>
+		                            		</option>
+		                            	<?php endif; ?>
+	                            	<?php endforeach; ?>
+                            	<?php endforeach; ?>
                             </select>
                         </td>
                         <th width="70">
-                            用户名:
+                            发帖人:
                         </th>
                         <td>
                             <input class="common-text" placeholder="用户名" name="uname" value="" id="" type="text">
+                        </td>
+                        <th width="70">
+                        	贴子标题
+                        </th>
+                        	<td>
+                            <input class="common-text" placeholder="贴子标题" name="title" value="" id="" type="text">
                         </td>
                         <td>
                             <input class="btn btn-primary btn2" name="" value="查询" type="submit">
@@ -121,86 +136,95 @@
         </div>
         <div class="result-wrap">
             <form name="myform" id="myform" method="post">
-                <div class="result-title">
-                    <div class="result-list">
-                        <a href="/index.php/admin/user/create"><i class="icon-font"></i>新增用户</a>
-                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
-                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
-                    </div>
-                </div>
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                     <tr>
-                        <th class="tc" width="5%">
-                            <input class="allChoose" name="" type="checkbox">
+                        <th>
+                            贴子ID
                         </th>
                         <th>
-                            排序
+                            贴子标题
                         </th>
                         <th>
-                            ID
+                            贴子内容
                         </th>
                         <th>
-                            账号名
+                            发帖人
                         </th>
                         <th>
-                            用户名
+                            回复数
                         </th>
                         <th>
-                            头像
+                            查看数
                         </th>
                         <th>
-                            权限
+                            是否加精
                         </th>
                         <th>
-                            性别
+                            是否置顶
                         </th>
                         <th>
-                            年龄
+                            是否显示
                         </th>
                         <th>
                             创建时间
                         </th>
                         <th>
-                            操作
+                            最后一次修改时间
+                        </th>
+                        <th>
+                        	操作
                         </th>
                     </tr>
-                    <?php foreach($user as $k=>$v): ?>
+                    <?php foreach($posts as $k=>$v): ?>
                     <tr>
-                        <td class="tc">
-                            <input name="id[]" value="59" type="checkbox">
+                        <td>
+                            <?=$v['pid']?>
                         </td>
                         <td>
-                            <input name="ids[]" value="59" type="hidden">
-                            <input class="common-input sort-input" name="ord[]" value="0" type="text">
+                            <?=$v['title']?>
                         </td>
                         <td>
-                            <?=$v['uid']?>
+                            <?=$v['content']?>
                         </td>
                         <td>
-                            <?=$v['uname']?>
+                            <?=$users[$v['uid']]?>
                         </td>
                         <td>
-                            <?=$v['username']?>
+                            <?=$v['rep_cnt']?>
                         </td>
                         <td>
-                            <img src="/<?=$v['uface']?>" />
+                            <?=$v['view_cnt']?>
                         </td>
                         <td>
-                            <?=$v['auth']?>
+                        	<?php  if ($v['is_jing'] == 0) { ?>
+                        	<a href="/index.php/admin/Post/addJing/pid/<?=$v['pid']?>">加精</a>
+	                        <?php } else { ?>
+                        	<a href="/index.php/admin/Post/rmJing/pid/<?=$v['pid']?>">取消加精</a>
+	                        <?php } ?>
                         </td>
                         <td>
-                            <?=$v['sex']?>
+                        	<?php  if ($v['is_top'] == 0) { ?>
+                        	<a href="/index.php/admin/Post/setTop/pid/<?=$v['pid']?>">置顶</a>
+	                        <?php } else { ?>
+                        	<a href="/index.php/admin/Post/rmTop/pid/<?=$v['pid']?>">取消置顶</a>
+	                        <?php } ?>
                         </td>
                         <td>
-                            <?=$v['age']?>
+                        	<?php  if ($v['is_display'] == 0) { ?>
+                        	<a href="/index.php/admin/Post/post_display/pid/<?=$v['pid']?>">显示</a>
+	                        <?php } else { ?>
+                        	<a href="/index.php/admin/Post/no_display/pid/<?=$v['pid']?>">不显示</a>
+	                        <?php } ?>
                         </td>
                         <td>
                             <?=date('Y-m-d H:i:s', $v['created_at'])?>
                         </td>
                         <td>
-                            <a class="link-update" href="/index.php/admin/user/edit/uid/<?=$v['uid']?>">修改</a>
-                            <a class="link-del" href="/index.php/admin/user/del/uid/<?=$v['uid']?>">删除</a>
+                            <?=date('Y-m-d H:i:s', $v['updated_at'])?>
+                        </td>
+                        <td>
+                            <a class="link-del" href="/index.php/admin/post/del/pid/<?=$v['pid']?>">删除</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

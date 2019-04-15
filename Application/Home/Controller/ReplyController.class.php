@@ -66,13 +66,12 @@ class ReplyController extends CommonController
 
 		if ($row) {
 			$pid			  	 = $data['pid'];
-			$bbs_post = M('bbs_post')->where("pid=$pid");
 			// 更改贴子更新时间
 			$time = time();
-			$bbs_post->save(['updated_at'=>$time]);
+			M('bbs_post')->where("pid=$pid")->save(['updated_at'=>$time]);
 			
 			// 贴子回复数+1
-			$bbs_post->setInc('rep_cnt', 1);			
+			M('bbs_post')->where("pid=$pid")->setInc('rep_cnt', 1);			
 			
 			$this->success('添加回复成功');
 		} else {

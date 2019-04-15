@@ -55,6 +55,7 @@ class LoginController extends CommonController
         $ures  = $user->where("uname='{$uname}'")->find();
 
         if ($ures && password_verify($upwd, $ures['upwd'])) {
+            unset($ures['upwd']);
             $_SESSION['userInfo'] = $ures;
             $_SESSION['flag'] = true;
             $this->success('登录成功');

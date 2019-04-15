@@ -25,11 +25,21 @@
 			</td>
 			<td>
 				<select name="cid">
-					<?php
-					 foreach($cates as $k=>$v): ?>
-					<option value="<?=$k?>" <?php if($cid==$k) { echo 'selected';  } ?>><?=$v?></option>
-					<?php endforeach; ?>
-				</select>
+                        	<?php foreach($oparts as $part): ?>
+                        	<option disabled>
+                        		<?=$part['pname']?>
+                        	</option>
+                            	<?php foreach($ocates as $cate): ?>
+	                            	<?php 
+	                            		if ($cate['pid'] == $part['pid']) : 
+	                            	?>
+	                            		<option value="<?=$cate['cid']?>" <?php if($cate['cid']==$cid) { echo 'selected'; } ?> >
+	                            			----<?=$cate['cname']?>
+	                            		</option>
+	                            	<?php endif; ?>
+                            	<?php endforeach; ?>
+                        	<?php endforeach; ?>
+                </select>
 			</td>
 		</tr>
 		<tr>

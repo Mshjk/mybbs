@@ -19,9 +19,16 @@ class PostController extends CommonController
 		// 获取版块信息
 		$cates = M('bbs_cate')->getField('cid, cname');
 
+		// 获取版块信息
+		$ocates		= M('bbs_cate')->select();
+		// 获取分区信息
+		$oparts		= M('bbs_part')->select();
+
 		$this->getData();
 		$this->assign('cid',   $cid);
 		$this->assign('cates', $cates);
+		$this->assign('ocates', $ocates);
+		$this->assign('oparts', $oparts);
 		$this->display();
 	}
 

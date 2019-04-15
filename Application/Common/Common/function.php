@@ -1,7 +1,7 @@
 <?php
 	/**
 	 * 功能: 根据大图片名称, 返回缩略图名称
-	 * 参数: $info 包含大图片信息的数组
+	 * 参数: $filename 包含大图片信息的数组
 	 * 返回: 缩略图名称
 	 */
 	function getSm($filename)
