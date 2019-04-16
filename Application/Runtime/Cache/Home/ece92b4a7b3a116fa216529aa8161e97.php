@@ -88,41 +88,44 @@
 		</div>
 		<!--菜单部分end-->
 		<!--搜索部分start-->
-		<div id="search">
-			<table cellpadding="0" cellspacing="0">
-			<tr>
-				<td class="search_ico">
-				</td>
-				<td class="search_input">
-					<input type="text" name="search" x-webkit-speech speech placeholder="请输入搜索内容"/>
-				</td>
-				<td class="search_select">
-					<a href="">帖子</a>
-					<span class="select"></span>
-				</td>
-				<td class="search_btn">
-					<button>搜索</button>
-				</td>
-				<td class="search_hot">
-					<div>
-						<strong>热搜:</strong>
-						<a href="">交友</a>
-						<a href="">教育</a>
-						<a href="">幽默</a>
-						<a href="">搞笑</a>
-						<a href="">房产</a>
-						<a href="">购物</a>
-						<a href="">二手</a>
-						<a href="">衣服</a>
-						<a href="">鞋子</a>
-						<a href="">帮助</a>
-						<a href="">折扣</a>
-						<a href="">电影</a>
-					</div>
-				</td>
-			</tr>
-			</table>
-		</div>
+		<form action="/index.php/home/post/index" method="post">
+			<div id="search">
+				<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td class="search_ico">
+					</td>
+					<td class="search_input">
+						<input type="hidden" name="s" value="biaoji">
+						<input type="text" name="title" x-webkit-speech speech placeholder="请输入搜索内容"/>
+					</td>
+					<td class="search_select">
+						<a href="">帖子</a>
+						<span class="select"></span>
+					</td>
+					<td class="search_btn">
+						<input type="submit" value="搜索">
+					</td>
+					<td class="search_hot">
+						<div>
+							<strong>热搜:</strong>
+							<a href="">交友</a>
+							<a href="">教育</a>
+							<a href="">幽默</a>
+							<a href="">搞笑</a>
+							<a href="">房产</a>
+							<a href="">购物</a>
+							<a href="">二手</a>
+							<a href="">衣服</a>
+							<a href="">鞋子</a>
+							<a href="">帮助</a>
+							<a href="">折扣</a>
+							<a href="">电影</a>
+						</div>
+					</td>
+				</tr>
+				</table>
+			</div>
+		</form>
 		<!--搜索部分end-->
 		<!--小提示部分start-->
 		<div id="tip">
@@ -197,6 +200,8 @@
 				<td class="list_title">
 					<a href="/index.php/home/reply/create/pid/<?=$post['pid']?>"><?=$post['title']?>
 					</a>
+					<?php
+ if ($post['is_top'] == 1) { echo "<span style='color: red; font-size: 10px'> (置顶) </span>"; } if ($post['is_jing'] == 1) { echo "<span style='color: green; font-size: 10px'> (加精) </span>"; } ?>
 				</td>
 				<td class="list_author">
 					<?=$users[$post['uid']]?>

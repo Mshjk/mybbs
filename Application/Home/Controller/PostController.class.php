@@ -54,31 +54,38 @@ class PostController extends CommonController
 	// 贴子列表
 	public function index()
 	{
-		$where   = [];
-		$wheres  = [];
+
+		$where   			 = [];
+		$wheres  			 = [];
 		// 如果是点击某个版块进来的
 		if (isset($_GET['cid'])) {
-			$where['cid'] = ['eq', $_GET['cid']];
+			$where['cid'] 	 = ['eq', $_GET['cid']];
 		}
 
-		$post    = M('bbs_post');
+		// 如果有查询
+		if (isset($_POST['s']) && !empty($_POST['title'])) {
+			$where['title']  = ['like', "%{$_POST['title']}%"];
+		}
+
+		$post    			 = M('bbs_post');
 
 		// 获取所有贴子的用户id
-		$pUid    = $post->field('uid')->where($where)->select();
+		$pUid    			 = $post->field('uid')->where($where)->select();
 
 		// 将uid重新保存到一个数组中, 并去重复, 并用','拼接
-		$uidList = [];
+		$uidList 			 = [];
 		foreach($pUid as $k=>$v) {
-			$uidList[] = $v['uid'];
+			$uidList[] 		 = $v['uid'];
 		}
-		$uid     = implode(',', array_unique($uidList));
+		$uid     			 = implode(',', array_unique($uidList));
 
-		$wheres['uid'] = ['in', $uid];
+		$wheres['uid'] 		 = ['in', $uid];
 		// 获取所有用户信息
-		$users   = M('bbs_user')->where($wheres)->getField('uid, uname');
+		$users   			 = M('bbs_user')->where($wheres)->getField('uid, uname');
 
-		// 获取所有贴子信息
-		$posts   = $post->where($where)->order("updated_at desc")->select();
+		$where['is_display'] = ['eq', 1];
+		// 获取所有贴子信息, 并按照置顶, 加精, 最后修改时间排序
+		$posts   			 = $post->where($where)->order("is_top desc, is_jing desc, updated_at desc")->select();
 
 		// 获取数据
 		$this->getData();

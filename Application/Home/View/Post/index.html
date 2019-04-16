@@ -41,6 +41,14 @@
 				<td class="list_title">
 					<a href="/index.php/home/reply/create/pid/<?=$post['pid']?>"><?=$post['title']?>
 					</a>
+					<?php
+						if ($post['is_top'] == 1) {
+							echo "<span style='color: red; font-size: 10px'> (置顶) </span>";
+						}
+						if ($post['is_jing'] == 1) {
+							echo "<span style='color: green; font-size: 10px'> (加精) </span>";
+						}
+					?>
 				</td>
 				<td class="list_author">
 					<?=$users[$post['uid']]?>

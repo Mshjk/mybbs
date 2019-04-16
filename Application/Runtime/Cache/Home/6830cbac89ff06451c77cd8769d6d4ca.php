@@ -158,98 +158,52 @@
 		<!--小提示部分end-->
 	</div>
 	<!--网页头部end-->
-	<!-- 首页主体内容, 如果没有点击版块则显示所有版块下的所有分区 -->
-	<?php
- if ($pid != 'all') { ?>
-		<div class="content">
-	<!--分区部分start-->
-	<div class="section">
-		<!--分区标题部分start-->
-		<div class="section_title">
-			<span class="section_title_left"><?=$opart['pname']?>
-			</span>
-			<!-- <span class="section_title_right">分区版主：<a href=""><?=$users[$cate['uid']]?>
-			</a></span> -->
-		</div>
-		<!--分区标题部分end-->
-		<!--分区内容部分start-->
-		<div class="section_content">
-			<table cellspacing="0" celpadding="0">
-			<tr>
-				<?php
- $i = 0; foreach($cates as $cate): if($cate['pid'] == $opart['pid']): ?>
-				<td>
-					<span class="section_content_ico">
-					<img src="/Public/Home/images/forum_new.gif" title="<?=$cate['cname']?>"/>
-					</span>
-					<dl>
-						<dd class="dd_title"><a href="/index.php/home/post/index/cid/<?=$cate['cid']?>"><?=$cate['cname']?>
-						</a></dd>
-						<dd>
-						<em>主题：54</em>,
-						<em>帖子：244</em>
-						</dd>
-						<dd>
-						<a href="">最后发表: 2012-11-1 10:22</a>
-						</dd>
-					</dl>
-				</td>
-				<?php
- $i++; endif; ?>
-				<?php  if ($i % 3 == 0) { echo '</tr>'; echo '<tr>'; } ?>
-				<?php endforeach; ?>
-			</tr>
-			</table>
-		</div>
-		<!--分区内容部分end-->
-	</div>
-</div>
-	<?php } else { ?>
 		<!--内容部分start-->
-<div class="content">
-	<!--分区部分start-->
-	<?php foreach($parts as $part): ?>
-	<div class="section">
-		<!--分区标题部分start-->
-		<div class="section_title">
-			<span class="section_title_left"><?=$part['pname']?>
-			</span>
-		</div>
-		<!--分区标题部分end-->
-		<!--分区内容部分start-->
-		<div class="section_content">
-			<table cellspacing="0" celpadding="0">
-			<tr>
-				<?php  $i = 0; foreach($cates as $cate): ?>
-					<?php if ($cate['pid'] == $part['pid']): ?>
-				<td>
-					<span class="section_content_ico">
-					<a href=""><img src="/Public/Home/images/forum_new.gif" title="Discuz!程序发布"/>
-					</span>
-					<dl>
-						<dd class="dd_title"><a href="/index.php/home/post/index/cid/<?=$cate['cid']?>"><?=$cate['cname']?></a></dd>
-						<dd>
-						<em>主题：54</em>,
-						<em>帖子：244</em>
-						</dd>
-						<dd>
-						<a href="">最后发表: 2012-11-1 10:22</a>
-						</dd>
-					</dl>
-				</td>
-				<?php
- $i++; endif; ?>
-				<?php  if ($i % 3 == 0) { echo '</tr>'; echo '<tr>'; } ?>
-				<?php endforeach; ?>
-			</tr>
+	<div class="content">			
+		<form action="/index.php/home/user/update/uid/<?=$user['uid']?>" method="post" enctype="multipart/form-data">
+			<table align="center" width="500" height="60">
+				<tr>
+					<td><label>帐户名(登录账号):</label></td>
+					<td><input type="text" disabled value="<?=$user['uname']?>"></td>
+				</tr>
+				<tr>
+					<td><label>用户名:</label></td>
+					<td><input type="text" name="username" value="<?=$user['username']?>"></td>
+				</tr>
+				<tr>
+					<td><label>年龄:</label></td>
+					<td><input type="text" name="age" value="<?=$user['age']?>"></td>
+				</tr>
+				<tr>
+					<td><label>性别:</label></td>
+					<td>
+						<select name="sex">
+							<option value="w" <?php echo $user['sex']=='w' ? 'selected' : ''; ?>>女</option>
+							<option value="m" <?php echo $user['sex']=='m' ? 'selected' : ''; ?>>男</option>
+							<option value="x" <?php echo $user['sex']=='x' ? 'selected' : '' ;?>>保密</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label>手机号:</label></td>
+					<td><input type="text" name="tel" value="<?=$user['tel']?>"></td>
+				</tr>
+				<tr>
+					<td><label>头像:</label></td>
+					<td>
+						<input type="file" name="uface">
+						<input type="hidden" name="yimg" value="<?=$user['uface']?>" >
+						<img src="/<?=getSm($user['uface'])?>">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="修改"></td>
+				</tr>
 			</table>
-		</div>
-		<!--分区内容部分end-->
+		</form>
+			
 	</div>
-	<?php endforeach; ?>
-</div>
-	<?php } ?>
-	<!--分区部分end-->
+	<!--内容部分end-->
 		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->

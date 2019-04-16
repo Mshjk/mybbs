@@ -140,7 +140,7 @@ em{
 	text-align: center;
 	background:url("../images/search.png") no-repeat 0 -296px;
 }
-#search .search_btn button{
+#search .search_btn input{
 	color: #369;
 	border:0;
 	font-size: 14px;
