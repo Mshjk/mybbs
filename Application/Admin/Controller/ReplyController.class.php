@@ -55,4 +55,19 @@ class ReplyController extends CommonController
 		$this->assign('show', $show);
 		$this->display();
 	}
+
+	// 删除回复
+	public function del()
+	{
+		// var_dump($_GET);
+		$rid = $_GET['rid'];
+
+		$row = M('bbs_reply')->delete($rid);
+
+		if ($row) {
+			$this->success('删除成功');
+		} else {
+			$this->error('删除失败');
+		}
+	}
 }

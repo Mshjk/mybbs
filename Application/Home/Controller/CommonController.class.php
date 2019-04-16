@@ -44,15 +44,15 @@ class CommonController extends Controller
         $this->assign('newUser', $newUser);
         $this->assign('postAll', $postAll);
         $this->assign('newPost', $newPost);
-    	$this->assign('parts', $parts);
-        $this->assign('links', $links);
+    	$this->assign('parts',   $parts);
+        $this->assign('links',   $links);
 	}
 
 
     // 屏蔽敏感词汇
     public function banWord($text)
     {
-        $str = file_get_contents("./Public/Include/banWord.txt");
+        $str     = file_get_contents("./Public/Include/banWord.txt");
         $pattern = '/\|(.*?)\|/';
         $res     = preg_match_all($pattern, $str, $arr);
 

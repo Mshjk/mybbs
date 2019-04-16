@@ -12,28 +12,28 @@ class PostController extends CommonController
 		// 查询条件
 		$where = [];
 		if(isset($_GET['cid']) && !empty($_GET['cid'])) {
-			$where['cid'] = ['eq', "{$_GET['cid']}"];
+			$where['cid']		= ['eq', "{$_GET['cid']}"];
 		}
 		if(isset($_GET['uname']) && !empty($_GET['uname'])) {
 			$userWhere['uname'] = ['like', "%{$_GET['uname']}%"];
-			$uname			= $_GET['uname'];
+			$uname				= $_GET['uname'];
 			// 查找该用户名相关的信息
-			$userinfo		= M('bbs_user')->where($userWhere)->getField('uid, uname');
-			$userinfo		= array_keys($userinfo);
-			$userinfo		= implode(',', $userinfo);
-			$where['uid']	= ['in', $userinfo];
+			$userinfo			= M('bbs_user')->where($userWhere)->getField('uid, uname');
+			$userinfo			= array_keys($userinfo);
+			$userinfo			= implode(',', $userinfo);
+			$where['uid']		= ['in', $userinfo];
 		}
 		if(isset($_GET['title']) && !empty($_GET['title'])) {
-			$where['title'] = ['like', "%{$_GET['title']}%"];
+			$where['title'] 	= ['like', "%{$_GET['title']}%"];
 		}
 
 
 		$bbs_post	= M('bbs_post');
 		
 		// 分页
-		$count = $bbs_post->where($where)->count();
-		$page = new Page($count, 3);
-		$show = $page->show();
+		$count 		= $bbs_post->where($where)->count();
+		$page 		= new Page($count, 3);
+		$show  		= $page->show();
 		
 		// 获取贴子信息
 		$posts		= $bbs_post->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();

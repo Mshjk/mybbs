@@ -36,13 +36,16 @@
 			<!--logo部分end-->
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
-			<div id="login" style="left:800px; top: 50px; position: absolute">
+			<div id="login" style="left:700px; top: 50px; position: absolute">
 				<?php
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>
 				<?php } ?>
-				<a href="/index.php/home/User/index"><?=$_SESSION['userInfo']['username']?>
-				</a> | <a href="/index.php/home/login/logout">退出登录</a>
+				
+				<a href="/index.php/home/user/index"><?=$_SESSION['userInfo']['username']?>
+				</a> | 
+				<a href="/index.php/home/user/editPass">修改密码 | </a>
+				<a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
 			<form action="/index.php/home/login/dologin" method="post">
@@ -138,16 +141,13 @@
 			<!--路径部分end-->
 			<!--统计部分start-->
 			<div id="count">
-				  今日: 
-				<em>1520</em>
+				  今日活跃贴子: 
+				<em><?=$newPost?></em>
 				<span class="pipe">|</span>
-				  昨日: 
-				<em>1520</em>
-				<span class="pipe">|</span>
-				  帖子: 
+				  贴子总数: 
 				<em><?=$postAll?></em>
 				<span class="pipe">|</span>
-				  会员: 
+				  会员总数: 
 				<em><?=$userAll?></em>
 				<span class="pipe">|</span>
 				  欢迎新会员: 
@@ -174,9 +174,9 @@
 					<td><label>性别:</label></td>
 					<td>
 						<select name="sex">
-							<option value="0" selected>女</option>
-							<option value="1">男</option>
-							<option value="2">保密</option>
+							<option value="w" selected>女</option>
+							<option value="m">男</option>
+							<option value="x">保密</option>
 						</select>
 					</td>
 				</tr>

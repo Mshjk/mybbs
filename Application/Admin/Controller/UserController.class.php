@@ -16,7 +16,7 @@ class UserController extends CommonController
 		// 查询条件
 		$where = [];
 		if(isset($_GET['sex']) && !empty($_GET['sex'])) {
-			$where['sex'] = ['eq', "{$_GET['sex']}"];
+			$where['sex'] 	= ['eq', "{$_GET['sex']}"];
 		}
 		if(isset($_GET['uname']) && !empty($_GET['uname'])) {
 			$where['uname'] = ['like', "%{$_GET['uname']}%"];
@@ -25,17 +25,12 @@ class UserController extends CommonController
 		$users = M('bbs_user');
 		// 获取用户数量
 		$count = $users->where($where)->count();
-
 		// 实例化分页类
-		$page = new Page($count, 5);
-		// foreach($where as $k=>$v) {
-		// 	$page->parameter[$k] = urldecode($v);
-		// }
+		$page  = new Page($count, 5);
 		// 分页按钮
-		$show = $page->show();
-
+		$show  = $page->show();
 		// 查询所有用户信息并且分页
-		$user = $users->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
+		$user  = $users->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
 
 		foreach($user as $k=>$v) {
 			switch($v['sex']) {
@@ -119,7 +114,7 @@ class UserController extends CommonController
 			// 生成缩略图
 			$this->doSm($thumb_name);
 		} else {
-			$data['uface'] = NO_PIC;
+			$data['uface'] 	= NO_PIC;
 		}
 
 		// 添加到数据库, 返回受影响行
@@ -139,20 +134,44 @@ class UserController extends CommonController
 			$this->error('未传入用户id');
 		}
 
-		$uid = $_GET['uid'];
+		$uid 	  = $_GET['uid'];
 
-		$user = M('bbs_user');
+		$user 	  = M('bbs_user');
 
 		$userinfo = $user->find($uid);
 		// 返回删除的记录数
-		$res = $user->delete($uid);
+		$res 	  = $user->delete($uid);
 
 		if($res) {
-			unlink($userinfo['uface']);
-			// 删除原缩放图
-			$sm_yimg    = pathinfo($userinfo['uface']);
-			$sm_yimg    = $sm_yimg['dirname'] . '/sm_' . $sm_yimg['filename'] . '.' . $sm_yimg['extension'];
-			unlink($sm_yimg);
+			// 获取用户发的帖子id
+			$postsId 	  	  = M('bbs_post')->where("uid=$uid")->getField('pid, title');
+
+			if ($postsId) {
+				$postsId 	  = implode(',', array_keys($postsId));
+				
+				// 获取贴子下的评论
+				$where['pid'] = ['in', $postsId];
+				$reply 		  = M('bbs_reply')->where($where)->select();
+				if ($reply) {
+					// 删除该用户贴子下的评论
+					M('bbs_reply')->where($where)->delete();
+				}
+				
+				// 删除该用户贴子
+				M('bbs_post')->where("uid=$uid")->delete();
+			}
+			
+
+			if ($userinfo['uface'] != NO_PIC) {
+				// 如果删除的图片不是默认用户图片
+
+				unlink($userinfo['uface']);
+				// 删除原缩放图
+				$sm_yimg    = pathinfo($userinfo['uface']);
+				$sm_yimg    = $sm_yimg['dirname'] . '/sm_' . $sm_yimg['filename'] . '.' . $sm_yimg['extension'];
+				unlink($sm_yimg);
+			}
+			
 			$this->success('删除成功', '/index.php/admin/user/index');
 		} else {
 			$this->error('删除失败');
@@ -197,7 +216,7 @@ class UserController extends CommonController
 				// 拼接文件路径
 				$this->filename = $info['uface']['savepath'] . $info['uface']['savename'];
 				// 把文件名放入插入数据库的数据中
-				$data['uface'] = $this->filename;
+				$data['uface']  = $this->filename;
 
 				$del = true;
 			}
@@ -221,12 +240,17 @@ class UserController extends CommonController
 
 		if ($res) { // 信息更新成功
 			if ($del) { // 头像成功上传
-				// 删除原图像
-				unlink($_POST['yimg']);
-				// 删除原缩放图
-				$sm_yimg    = pathinfo($_POST['yimg']);
-				$sm_yimg    = $sm_yimg['dirname'] . '/sm_' . $sm_yimg['filename'] . '.' . $sm_yimg['extension'];
-				unlink($sm_yimg);
+				if ($_POST['yimg'] != NO_PIC) {
+					// 如果删除的不是默认用户头像
+
+					// 删除原图像
+					unlink($_POST['yimg']);
+					// 删除原缩放图
+					$sm_yimg    = pathinfo($_POST['yimg']);
+					$sm_yimg    = $sm_yimg['dirname'] . '/sm_' . $sm_yimg['filename'] . '.' . $sm_yimg['extension'];
+					unlink($sm_yimg);
+				}
+				
 				// 生成新缩略图
 				// 拼接新缩略图名称
 				$thumb_name = getSm($this->filename);

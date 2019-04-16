@@ -39,11 +39,11 @@ class ReplyController extends CommonController
 		$p 				  = isset($_GET['p']) ? $_GET['p'] : 1;
 
 		$this->getData();
-		$this->assign('posts', $posts);
+		$this->assign('posts',  $posts);
 		$this->assign('replys', $replys);
-		$this->assign('users', $users);
-		$this->assign('show', $show);
-		$this->assign('p', $p);
+		$this->assign('users',  $users);
+		$this->assign('show',   $show);
+		$this->assign('p',      $p);
 		$this->display();
 	}
 

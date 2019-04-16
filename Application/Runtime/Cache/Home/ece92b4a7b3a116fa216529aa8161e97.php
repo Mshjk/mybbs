@@ -36,7 +36,7 @@
 			<!--logo部分end-->
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
-			<div id="login" style="left:800px; top: 50px; position: absolute">
+			<div id="login" style="left:700px; top: 50px; position: absolute">
 				<?php
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>
@@ -201,7 +201,7 @@
 					<a href="/index.php/home/reply/create/pid/<?=$post['pid']?>"><?=$post['title']?>
 					</a>
 					<?php
- if ($post['is_top'] == 1) { echo "<span style='color: red; font-size: 10px'> (置顶) </span>"; } if ($post['is_jing'] == 1) { echo "<span style='color: green; font-size: 10px'> (加精) </span>"; } ?>
+ if ($post['is_top'] == 1) { echo "<span style='color: red; font-size: 10px'> (置顶) </span>"; } if ($post['is_jing'] == 1) { echo "<span style='color: green; font-size: 10px'> (加精) </span>"; } if ($anniu) { $pid = $post['pid']; $cid = $_GET['cid']; if ($post['is_top'] == 1) { echo "<a href='/index.php/home/post/top/method/jian/pid/$pid/cid/$cid'> 取消置顶 </a>"; } else { echo "<a href='/index.php/home/post/top/method/jia/pid/$pid/cid/$cid'> 置顶 </a>"; } if ($post['is_jing'] == 1) { echo "<a href='/index.php/home/post/jing/method/jian/pid/$pid/cid/$cid'> 取消加精 </a>"; } else { echo "<a href='/index.php/home/post/jing/method/jia/pid/$pid/cid/$cid'> 加精 </a>"; } } ?>
 				</td>
 				<td class="list_author">
 					<?=$users[$post['uid']]?>
@@ -219,6 +219,24 @@
 		<!--帖子列表内容部分end-->
 	</div>
 	<!--帖子列表部分end-->
+				<style>
+				.result-wrap{padding:10px 20px;}
+				.list-page{padding:20px 0;text-align:center;}
+				.list-page a {	margin: 0 5px;
+								padding: 2px 7px;
+								border: 1px solid #ccc;
+								background: #f3f3f3;
+				}
+			</style>
+			<div class="result-wrap">
+	        	<form name="myform" id="myform" method="post">
+        			<div class="result-content">
+						<div class="list-page">
+                    		<?=$show?>
+            			</div>
+			        </div>
+			    </form>
+			</div>
 </div>
 <!--内容部分end-->		<!--友情链接部分start-->
 		<div id="friend_link">

@@ -22,7 +22,7 @@
             <ul class="top-info-list clearfix">
                 <li><a href="#"><?=$_SESSION['userInfo']['uname']?>
                 </a></li>
-                <li><a href="#">修改密码</a></li>
+                <li><a href="/index.php/admin/user/editPass">修改密码</a></li>
                 <li><a href="/index.php/admin/login/logout">退出</a></li>
             </ul>
         </div>

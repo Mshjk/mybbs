@@ -38,12 +38,12 @@ class LoginController extends CommonController
         $data['upwd']       = password_hash($data['upwd'], PASSWORD_DEFAULT);
         $data['created_at'] = time();
         $data['auth']       = 3;
-        $data['uface']      = 'Public/Uploads/User/no.jpg';
+        $data['uface']      = NO_PIC;
         $row = $user->add( $data );
         if ($row) {
-         $this->success('注册成功!', '/');
+            $this->success('注册成功!', '/');
         } else {
-           $this->error('注册失败!');
+            $this->error('注册失败!');
         }
     } 
     // 登录操作
@@ -57,7 +57,7 @@ class LoginController extends CommonController
         if ($ures && password_verify($upwd, $ures['upwd'])) {
             unset($ures['upwd']);
             $_SESSION['userInfo'] = $ures;
-            $_SESSION['flag'] = true;
+            $_SESSION['flag']     = true;
             $this->success('登录成功');
         } else {
             $this->error('账号或密码错误');

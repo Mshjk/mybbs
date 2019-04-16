@@ -8,9 +8,9 @@ class IndexController extends CommonController
 	// 显示论坛首页
     public function index()
     {
-        $cate  = M('bbs_cate');
-        $user  = M('bbs_user');
-        $pid   = isset($_GET['pid']) ? $_GET['pid'] : 'all';
+        $cate   = M('bbs_cate');
+        $user   = M('bbs_user');
+        $pid    = isset($_GET['pid']) ? $_GET['pid'] : 'all';
         $cwhere = '';
         // 判断是否传入pid
         if ($pid == 'all') {
@@ -35,11 +35,12 @@ class IndexController extends CommonController
             // 查询版主id相对应的版主名称
             $users = $user->where("uid in ($uid)")->getField('uid, uname');
         }
+
         // 获取单个版块的信息
         $opart = M('bbs_part')->find($pid);
 
         $this->getData();
-        $this->assign('pid', $pid);
+        $this->assign('pid',   $pid);
         $this->assign('users', $users);
         $this->assign('opart', $opart);
         $this->assign('cates', $cates);

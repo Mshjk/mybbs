@@ -11,7 +11,7 @@ class LinkController extends CommonController
 	public function index()
 	{
 		// 获取友情链接列表
-		$links = M('bbs_link')->select();
+		$links 	  = M('bbs_link')->select();
 
 		foreach ($links as $k=>$v) {
 			$lpic = $v['lpic'];

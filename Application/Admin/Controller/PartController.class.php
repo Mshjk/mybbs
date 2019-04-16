@@ -69,7 +69,7 @@ class PartController extends CommonController
 			$this->error('未传输id');
 		}
 
-		$pid = $_GET['pid'];
+		$pid   = $_GET['pid'];
 
 		$pinfo = M('bbs_part')->find($pid);
 
@@ -87,7 +87,7 @@ class PartController extends CommonController
 	{
 		$data = $_POST;
 
-		$row = M('bbs_part')->save($data);
+		$row  = M('bbs_part')->save($data);
 
 		if ($row) {
 			$this->success('修改成功', '/index.php/admin/part');

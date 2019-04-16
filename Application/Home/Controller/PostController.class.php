@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Think\Page;
 
 class PostController extends CommonController
 {
@@ -14,19 +15,17 @@ class PostController extends CommonController
 		}
 
 		// 如果接受到版块id
-		$cid   = empty($_GET['cid']) ? 0 : $_GET['cid'];
-
+		$cid 		= empty($_GET['cid']) ? 0 : $_GET['cid'];
 		// 获取版块信息
-		$cates = M('bbs_cate')->getField('cid, cname');
-
+		$cates 		= M('bbs_cate')->getField('cid, cname');
 		// 获取版块信息
 		$ocates		= M('bbs_cate')->select();
 		// 获取分区信息
 		$oparts		= M('bbs_part')->select();
 
 		$this->getData();
-		$this->assign('cid',   $cid);
-		$this->assign('cates', $cates);
+		$this->assign('cid',    $cid);
+		$this->assign('cates',  $cates);
 		$this->assign('ocates', $ocates);
 		$this->assign('oparts', $oparts);
 		$this->display();
@@ -40,16 +39,25 @@ class PostController extends CommonController
 			$this->error('内容不能为空');
 		}
 
+		// 获取版块信息
+		$cate 				 = M('bbs_cate')->find($_GET['cid']);
+
+		// 版主发的贴子自动加精置顶
+		if ($cate['uid'] == $_SESSION['userInfo']['uid']) {
+			$data['is_top']  = 1;
+			$data['is_jing'] = 1;
+		}
+
 		// 发帖人id
-		$data['uid'] 		= $_SESSION['userInfo']['uid'];
+		$data['uid'] 		 = $_SESSION['userInfo']['uid'];
 		// 创建时间, 更新时间
-		$data['updated_at'] = $data['created_at'] = time();
+		$data['updated_at']  = $data['created_at'] = time();
 
 		// 屏蔽敏感词汇
-		$title				= $data['title'];
-		$content			= $data['content'];
-		$data['title']				= $this->banWord($title);
-		$data['content']			= $this->banWord($content);
+		$title				 = $data['title'];
+		$content			 = $data['content'];
+		$data['title']		 = $this->banWord($title);
+		$data['content']	 = $this->banWord($content);
 
 		$row = M('bbs_post')->add($data);
 
@@ -93,14 +101,67 @@ class PostController extends CommonController
 		$users   			 = M('bbs_user')->where($wheres)->getField('uid, uname');
 
 		$where['is_display'] = ['eq', 1];
+		// 贴子分页
+		$count				 = $post->where($where)->count();
+		$page 				 = new Page($count, 5);
+		// 分页按钮
+		$show  = $page->show();
+
 		// 获取所有贴子信息, 并按照置顶, 加精, 最后修改时间排序
-		$posts   			 = $post->where($where)->order("is_top desc, is_jing desc, updated_at desc")->select();
+		$posts   			 = $post->where($where)->order("is_top desc, is_jing desc, updated_at desc")->limit($page->firstRow . ',' . $page->listRows)->select();
+
+		// 版主有对贴子加精置顶的操作
+		// 是否显示加精置顶按钮
+		$cate  = M('bbs_cate')->find($_GET['cid']);
+		$anniu = false;
+		if ($cate['uid'] == $_SESSION['userInfo']['uid']) {
+			$anniu = true;
+		}
 
 		// 获取数据
 		$this->getData();
 		$this->assign('posts', $posts);
+		$this->assign('show',  $show);
 		$this->assign('users', $users);
+		$this->assign('anniu', $anniu);
 		$this->display();
 		// 遍历显示
+	}
+
+	// 版主置顶操作
+	public function top()
+	{
+		$pid = $_GET['pid'];
+
+		if ($_GET['method'] == 'jia') {
+			$data['is_top'] = 1;	
+		} else {
+			$data['is_top'] = 0;			
+		}
+		$this->change($pid, $data);
+
+		$this->success('修改成功');
+	}
+
+
+	// 版主加精操作
+	public function jing()
+	{
+		$pid = $_GET['pid'];
+
+		if ($_GET['method'] == 'jia') {
+			$data['is_jing'] = 1;			
+		} else {
+			$data['is_jing'] = 0;	
+		}
+		$this->change($pid, $data);
+
+		$this->success('修改成功');
+	}
+
+	// 操作修改post
+	private function change($pid, $data)
+	{
+		return M('bbs_post')->where("pid=$pid")->save($data);
 	}
 }

@@ -36,7 +36,7 @@
 			<!--logo部分end-->
 			<!--登陆部分start-->
 			<?php  if (isset($_SESSION['flag']) && $_SESSION['flag']) { ?>
-			<div id="login" style="left:800px; top: 50px; position: absolute">
+			<div id="login" style="left:700px; top: 50px; position: absolute">
 				<?php
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>

@@ -19,7 +19,6 @@ class UserController extends CommonController
 		// 获取用户信息
 		$user = M('bbs_user')->find($uid);
 
-
 		$this->assign('user', $user);
 		$this->display();
 	}
@@ -31,7 +30,7 @@ class UserController extends CommonController
 		$data = $_POST;
 		// 判断是否要删除原头像
 		$del  = false;
-		// 
+
 		if (!empty($_FILES['uface']['name'])) {
 			$info = $this->doUp();
 			if (!$info) {
@@ -65,15 +64,18 @@ class UserController extends CommonController
 
 		if ($res) { // 信息更新成功
 			if ($del) { // 头像成功上传
-				// 删除原图像
-				unlink($_POST['yimg']);
-				// 删除原缩放图
-				$sm_yimg    = pathinfo($_POST['yimg']);
-				$sm_yimg    = $sm_yimg['dirname'] . '/sm_' . $sm_yimg['filename'] . '.' . $sm_yimg['extension'];
-				unlink($sm_yimg);
+				if ($_POST['yimg'] != NO_PIC) { // 如果删除的不是默认头像
+					// 删除原图像
+					unlink($_POST['yimg']);
+					// 删除原缩放图
+					$sm_yimg    = pathinfo($_POST['yimg']);
+					$sm_yimg    = $sm_yimg['dirname'] . '/sm_' . $sm_yimg['filename'] . '.' . $sm_yimg['extension'];
+					unlink($sm_yimg);
+				}
+	
 				// 生成新缩略图
 				// 拼接新缩略图名称
-				$thumb_name = getSm($this->filename);
+				$thumb_name 	= getSm($this->filename);
 				
 				// 生成缩略图
 				$this->doSm($thumb_name);
@@ -88,7 +90,7 @@ class UserController extends CommonController
 	}
 
 
-		// 显示修改密码-确认密码界面
+	// 显示修改密码-确认密码界面
 	public function editPass()
 	{
 		$this->getData();

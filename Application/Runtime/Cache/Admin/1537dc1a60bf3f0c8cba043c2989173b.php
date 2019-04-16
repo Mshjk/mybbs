@@ -22,7 +22,7 @@
             <ul class="top-info-list clearfix">
                 <li><a href="#"><?=$_SESSION['userInfo']['uname']?>
                 </a></li>
-                <li><a href="#">修改密码</a></li>
+                <li><a href="/index.php/admin/user/editPass">修改密码</a></li>
                 <li><a href="/index.php/admin/login/logout">退出</a></li>
             </ul>
         </div>
@@ -63,6 +63,19 @@
                     <li><a href="/index.php/admin/link/index"><i class="icon-font">&#xe037;</i>查看友情链接</a></li>
                 </ul>
                 </li>
+                <li>
+                <a href="#"><i class="icon-font">&#xe018;</i>贴子管理</a>
+                <ul class="sub-menu">
+                    <li><a href="/index.php/admin/post/index"><i class="icon-font">&#xe037;</i>查看贴子</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="#"><i class="icon-font">&#xe018;</i>评论管理</a>
+                <ul class="sub-menu">
+                    <li><a href="/index.php/admin/reply/index"><i class="icon-font">&#xe037;</i>查看评论</a></li>
+                </ul>
+                </li>
+                <li>
             </ul>
         </div>
     </div>
