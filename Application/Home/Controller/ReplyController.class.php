@@ -61,6 +61,7 @@ class ReplyController extends CommonController
 		$data 				  	 = $_POST;
 		$data['created_at']   	 = time();
 		$data['uid']		 	 = $_SESSION['userInfo']['uid'];
+		$data['rcontent']		 = $this->banWord($data['rcontent']);
 
 		$row				  	 = M('bbs_reply')->add($data);
 

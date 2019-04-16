@@ -47,4 +47,15 @@ class CommonController extends Controller
     	$this->assign('parts', $parts);
         $this->assign('links', $links);
 	}
+
+
+    // 屏蔽敏感词汇
+    public function banWord($text)
+    {
+        $str = file_get_contents("./Public/Include/banWord.txt");
+        $pattern = '/\|(.*?)\|/';
+        $res     = preg_match_all($pattern, $str, $arr);
+
+        return str_replace($arr[1], '**', $text);
+    }
 }

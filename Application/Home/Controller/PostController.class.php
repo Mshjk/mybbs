@@ -36,11 +36,20 @@ class PostController extends CommonController
 	public function save()
 	{
 		$data = $_POST;
+		if (empty($_POST['title']) || empty($_POST['content'])) {
+			$this->error('内容不能为空');
+		}
 
 		// 发帖人id
-		$data['uid'] = $_SESSION['userInfo']['uid'];
+		$data['uid'] 		= $_SESSION['userInfo']['uid'];
 		// 创建时间, 更新时间
 		$data['updated_at'] = $data['created_at'] = time();
+
+		// 屏蔽敏感词汇
+		$title				= $data['title'];
+		$content			= $data['content'];
+		$data['title']				= $this->banWord($title);
+		$data['content']			= $this->banWord($content);
 
 		$row = M('bbs_post')->add($data);
 

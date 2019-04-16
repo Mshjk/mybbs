@@ -7774,3 +7774,1349 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000843s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000933s ]
 
+[ 2019-04-16T12:12:44+08:00 ] 127.0.0.1 /index.php/home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0032s ]
+SQL: SELECT `uid` FROM `bbs_cate`  [ RunTime:0.0013s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE ( uid in (1,12,5,26,8) )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bbs_part` WHERE `pid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013261s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000861s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000949s ]
+
+[ 2019-04-16T12:12:46+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0013s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0019s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012020s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001342s ]
+
+[ 2019-04-16T12:12:46+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0011s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001176s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001273s ]
+
+[ 2019-04-16T12:12:48+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+
+[ 2019-04-16T12:12:53+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0011s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0011s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016858s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001190s ]
+
+[ 2019-04-16T12:15:04+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000854s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003919s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0032s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0018s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002460s ]
+
+[ 2019-04-16T12:15:05+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0011s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009953s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2019-04-16T12:15:08+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0016s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010327s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000735s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
+
+[ 2019-04-16T12:15:11+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+
+[ 2019-04-16T12:15:22+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0015s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0016s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009587s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000991s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001218s ]
+
+[ 2019-04-16T12:15:22+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0025s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001115s ]
+
+[ 2019-04-16T12:15:36+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+
+[ 2019-04-16T12:16:15+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+
+[ 2019-04-16T12:16:18+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+
+[ 2019-04-16T12:16:41+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+
+[ 2019-04-16T12:17:07+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+NOTIC: [8] Undefined variable: str D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 58 行.
+
+[ 2019-04-16T12:17:13+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+
+[ 2019-04-16T12:17:27+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+NOTIC: [2] file_get_contents(/Public/Include/banWord.txt): failed to open stream: No such file or directory D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 55 行.
+
+[ 2019-04-16T12:17:35+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+NOTIC: [2] file_get_contents(/Public/Include/banWord.txt): failed to open stream: No such file or directory D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 55 行.
+
+[ 2019-04-16T12:17:55+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001291s ]
+NOTIC: [2] file_get_contents(/Public/Include/banWord.txt): failed to open stream: No such file or directory D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 55 行.
+
+[ 2019-04-16T12:18:03+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+NOTIC: [2] file_get_contents(../Public/Include/banWord.txt): failed to open stream: No such file or directory D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 55 行.
+
+[ 2019-04-16T12:18:06+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+
+[ 2019-04-16T12:18:17+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+
+[ 2019-04-16T12:18:52+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+
+[ 2019-04-16T12:20:00+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+NOTIC: [2] preg_replace():  D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 61 行.
+
+[ 2019-04-16T12:20:05+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+NOTIC: [2] preg_replace():  D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 61 行.
+
+[ 2019-04-16T12:20:15+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+NOTIC: [2] preg_replace():  D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 61 行.
+
+[ 2019-04-16T12:20:21+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+NOTIC: [2] preg_replace():  D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 61 行.
+
+[ 2019-04-16T12:21:04+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+NOTIC: [2] preg_replace():  D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 61 行.
+
+[ 2019-04-16T12:22:32+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+NOTIC: [2] preg_replace():  D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\CommonController.class.php 第 61 行.
+
+[ 2019-04-16T12:23:46+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+
+[ 2019-04-16T12:24:34+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0018s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012136s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2019-04-16T12:24:35+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+
+[ 2019-04-16T12:24:55+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+
+[ 2019-04-16T12:25:00+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001665s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0024s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0015s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000769s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014688s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014774s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001104s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001219s ]
+
+[ 2019-04-16T12:25:01+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0018s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012505s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000966s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001064s ]
+
+[ 2019-04-16T12:25:02+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000521s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0018s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011171s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001153s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001289s ]
+
+[ 2019-04-16T12:25:22+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+
+[ 2019-04-16T12:25:44+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+
+[ 2019-04-16T12:25:50+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+
+[ 2019-04-16T12:26:06+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+
+[ 2019-04-16T12:26:10+08:00 ] 127.0.0.1 /index.php/home/post/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0018s ]
+SQL: SELECT `uid` FROM `bbs_post` WHERE `cid` = '1'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12')  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_post` WHERE `cid` = '1' AND `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009791s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000994s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001103s ]
+
+[ 2019-04-16T12:26:12+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0012s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011336s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001212s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001352s ]
+
+[ 2019-04-16T12:26:14+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0009s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000805s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000883s ]
+
+[ 2019-04-16T12:26:23+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+
+[ 2019-04-16T12:26:40+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+
+[ 2019-04-16T12:27:11+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+
+[ 2019-04-16T12:28:08+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+
+[ 2019-04-16T12:28:28+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000521s ]
+
+[ 2019-04-16T12:28:48+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+
+[ 2019-04-16T12:30:58+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+
+[ 2019-04-16T12:31:09+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+
+[ 2019-04-16T12:31:33+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0012s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0018s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011876s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001192s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001338s ]
+
+[ 2019-04-16T12:31:34+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0009s ]
+SQL: INSERT INTO `bbs_post` (`title`,`content`,`cid`,`uid`,`created_at`,`updated_at`) VALUES ('死dsjajdjasosbdjasjdja去死','','1','8','1555389094','1555389094') [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009221s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000792s ]
+
+[ 2019-04-16T12:31:35+08:00 ] 127.0.0.1 /index.php/home/post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: SELECT `uid` FROM `bbs_post`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0009s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12','1','8')  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_post` WHERE `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined index: cid D:\xdl\wamp64\www\guangz47\mybbs\Application\Runtime\Cache\Home\ece92b4a7b3a116fa216529aa8161e97.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001522s ]
+
+[ 2019-04-16T12:31:39+08:00 ] 127.0.0.1 /index.php/home/reply/create/pid/9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+NOTIC: [8] Undefined variable: posts D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\ReplyController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0053s ]
+SQL: UPDATE `bbs_post` SET `view_cnt`=view_cnt+1 WHERE ( pid=9 ) [ RunTime:0.0038s ]
+SQL: SELECT * FROM `bbs_post` WHERE `pid` = 9 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_reply` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_reply` WHERE ( pid=9 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_reply` WHERE ( pid=9 ) ORDER BY `created_at` asc LIMIT 0,3   [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `bbs_user`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012340s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001938s ]
+
+[ 2019-04-16T12:33:20+08:00 ] 127.0.0.1 /index.php/home/reply/create/pid/9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001169s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001301s ]
+NOTIC: [8] Undefined variable: posts D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\ReplyController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0013s ]
+SQL: UPDATE `bbs_post` SET `view_cnt`=view_cnt+1 WHERE ( pid=9 ) [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_post` WHERE `pid` = 9 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_reply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_reply` WHERE ( pid=9 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_reply` WHERE ( pid=9 ) ORDER BY `created_at` asc LIMIT 0,3   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_user`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001046s ]
+
+[ 2019-04-16T12:33:37+08:00 ] 127.0.0.1 /index.php/home/post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0012s ]
+SQL: SELECT `uid` FROM `bbs_post`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12','1','8')  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_post` WHERE `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined index: cid D:\xdl\wamp64\www\guangz47\mybbs\Application\Runtime\Cache\Home\ece92b4a7b3a116fa216529aa8161e97.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010943s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001203s ]
+
+[ 2019-04-16T12:33:39+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0010s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012248s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001353s ]
+
+[ 2019-04-16T12:34:08+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0011s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011432s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2019-04-16T12:34:29+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010365s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003021s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003216s ]
+
+[ 2019-04-16T12:34:54+08:00 ] 127.0.0.1 /index.php/home/post/create/cid/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002022s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0020s ]
+SQL: SELECT `cid`,`cname` FROM `bbs_cate`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `bbs_cate`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001069s ]
+
+[ 2019-04-16T12:34:56+08:00 ] 127.0.0.1 /index.php/home/post/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: INSERT INTO `bbs_post` (`title`,`content`,`cid`,`uid`,`created_at`,`updated_at`) VALUES ('曾海文**吧哈哈哈**你把','**吧**哈哈哈','1','8','1555389296','1555389296') [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006988s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001218s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001191s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001309s ]
+
+[ 2019-04-16T12:34:57+08:00 ] 127.0.0.1 /index.php/home/post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0013s ]
+SQL: SELECT `uid` FROM `bbs_post`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE `uid` IN ('12','1','8')  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `bbs_post` WHERE `is_display` = 1 ORDER BY `is_top` desc,`is_jing` desc,`updated_at` desc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined index: cid D:\xdl\wamp64\www\guangz47\mybbs\Application\Runtime\Cache\Home\ece92b4a7b3a116fa216529aa8161e97.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010325s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010402s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001221s ]
+
+[ 2019-04-16T12:34:59+08:00 ] 127.0.0.1 /index.php/home/reply/create/pid/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+NOTIC: [8] Undefined variable: posts D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\ReplyController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0018s ]
+SQL: UPDATE `bbs_post` SET `view_cnt`=view_cnt+1 WHERE ( pid=10 ) [ RunTime:0.0012s ]
+SQL: SELECT * FROM `bbs_post` WHERE `pid` = 10 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `bbs_reply` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_reply` WHERE ( pid=10 ) LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT * FROM `bbs_reply` WHERE ( pid=10 ) ORDER BY `created_at` asc LIMIT 0,3   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `bbs_user`  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013753s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013843s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003958s ]
+
+[ 2019-04-16T12:36:01+08:00 ] 127.0.0.1 /index.php/home/reply/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `bbs_reply` [ RunTime:0.0014s ]
+SQL: INSERT INTO `bbs_reply` (`pid`,`rcontent`,`created_at`,`uid`) VALUES ('10','我也觉得曾海文**哈哈哈哈**','1555389361','8') [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0016s ]
+SQL: UPDATE `bbs_post` SET `updated_at`='1555389361' WHERE ( pid=10 ) [ RunTime:0.0016s ]
+SQL: UPDATE `bbs_post` SET `rep_cnt`=rep_cnt+1 WHERE ( pid=10 ) [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018419s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002997s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003099s ]
+
+[ 2019-04-16T12:36:03+08:00 ] 127.0.0.1 /index.php/home/reply/create/pid/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+NOTIC: [8] Undefined variable: posts D:\xdl\wamp64\www\guangz47\mybbs\Application\Home\Controller\ReplyController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0013s ]
+SQL: UPDATE `bbs_post` SET `view_cnt`=view_cnt+1 WHERE ( pid=10 ) [ RunTime:0.0010s ]
+SQL: SELECT * FROM `bbs_post` WHERE `pid` = 10 LIMIT 1   [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `bbs_reply` [ RunTime:0.0024s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_reply` WHERE ( pid=10 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `bbs_reply` WHERE ( pid=10 ) ORDER BY `created_at` asc LIMIT 0,3   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `bbs_user`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015759s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015847s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001174s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001476s ]
+
+[ 2019-04-16T14:02:57+08:00 ] 127.0.0.1 /index.php/home/index/index/pid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `bbs_cate` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `bbs_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_cate` WHERE ( pid=1 )  [ RunTime:0.0005s ]
+SQL: SELECT `uid` FROM `bbs_cate` WHERE ( pid=1 )  [ RunTime:0.0004s ]
+SQL: SELECT `uid`,`uname` FROM `bbs_user` WHERE ( uid in (1,12,8) )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bbs_part` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `bbs_part` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bbs_link` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `bbs_part`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bbs_link`  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_user` WHERE ( `created_at` <= 1555430399 AND `created_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `bbs_post` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bbs_post` WHERE ( `updated_at` <= 1555430399 AND `updated_at` >= 1555344000  ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+NOTIC: [8] Undefined variable: cate D:\xdl\wamp64\www\guangz47\mybbs\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 171 行.
+NOTIC: [8] Undefined index:  D:\xdl\wamp64\www\guangz47\mybbs\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018243s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001907s ]
+

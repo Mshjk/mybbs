@@ -41,8 +41,11 @@
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>
 				<?php } ?>
-				<a href="/index.php/home/User/index"><?=$_SESSION['userInfo']['username']?>
-				</a> | <a href="/index.php/home/login/logout">退出登录</a>
+				
+				<a href="/index.php/home/user/index"><?=$_SESSION['userInfo']['username']?>
+				</a> | 
+				<a href="/index.php/home/user/editPass">修改密码 | </a>
+				<a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
 			<form action="/index.php/home/login/dologin" method="post">
