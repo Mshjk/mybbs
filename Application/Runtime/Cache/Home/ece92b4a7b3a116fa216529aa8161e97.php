@@ -41,7 +41,7 @@
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>
 				<?php } ?>
-				<a href=""><?=$_SESSION['userInfo']['username']?>
+				<a href="/index.php/home/User/index"><?=$_SESSION['userInfo']['username']?>
 				</a> | <a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
@@ -138,20 +138,17 @@
 			<!--路径部分end-->
 			<!--统计部分start-->
 			<div id="count">
-				  今日: 
-				<em>1520</em>
+				  今日活跃贴子: 
+				<em><?=$newPost?></em>
 				<span class="pipe">|</span>
-				  昨日: 
-				<em>1520</em>
+				  贴子总数: 
+				<em><?=$postAll?></em>
 				<span class="pipe">|</span>
-				  帖子: 
-				<em>1520</em>
-				<span class="pipe">|</span>
-				  会员: 
-				<em>1520</em>
+				  会员总数: 
+				<em><?=$userAll?></em>
 				<span class="pipe">|</span>
 				  欢迎新会员: 
-				<em><a href="">1520</a></em>
+				<em><a href=""><?=$newUser?></a></em>
 			</div>
 			<!--统计部分end-->
 		</div>

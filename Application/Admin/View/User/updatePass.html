@@ -1,0 +1,15 @@
+<extend name="Index/index"/>
+<block name="main">
+	<div class="main-wrap">
+	    <div class="result-wrap">
+			<form action="/index.php/admin/user/update_pass" method="post">
+				<label for="upwd">新密码:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="password" name="upwd" id="upwd">
+				<br />
+				<label for="upwd">确认密码:</label>
+				<input type="password" name="reupwd" id="upwd">
+				<input type="submit" value="确认">
+			</form> 
+		</div>
+	</div>
+</block>

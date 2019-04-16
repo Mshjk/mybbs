@@ -158,52 +158,16 @@
 		<!--小提示部分end-->
 	</div>
 	<!--网页头部end-->
-		<!--内容部分start-->
-	<div class="content">			
-		<form action="/index.php/home/user/update/uid/<?=$user['uid']?>" method="post" enctype="multipart/form-data">
-			<table align="center" width="500" height="60">
-				<tr>
-					<td><label>帐户名(登录账号):</label></td>
-					<td><input type="text" disabled value="<?=$user['uname']?>"></td>
-				</tr>
-				<tr>
-					<td><label>用户名:</label></td>
-					<td><input type="text" name="username" value="<?=$user['username']?>"></td>
-				</tr>
-				<tr>
-					<td><label>年龄:</label></td>
-					<td><input type="text" name="age" value="<?=$user['age']?>"></td>
-				</tr>
-				<tr>
-					<td><label>性别:</label></td>
-					<td>
-						<select name="sex">
-							<option value="w" <?php echo $user['sex']=='w' ? 'selected' : ''; ?>>女</option>
-							<option value="m" <?php echo $user['sex']=='m' ? 'selected' : ''; ?>>男</option>
-							<option value="x" <?php echo $user['sex']=='x' ? 'selected' : '' ;?>>保密</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label>手机号:</label></td>
-					<td><input type="text" name="tel" value="<?=$user['tel']?>"></td>
-				</tr>
-				<tr>
-					<td><label>头像:</label></td>
-					<td>
-						<input type="file" name="uface">
-						<input type="hidden" name="yimg" value="<?=$user['uface']?>" >
-						<img src="/<?=getSm($user['uface'])?>">
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="修改"></td>
-				</tr>
-			</table>
-		</form>
-			
+	<div style="margin-left: 300px">
+		<form action="/index.php/home/user/update_pass" method="post">
+			<label for="upwd">新密码:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+			<input type="password" name="upwd" id="upwd">
+			<br />
+			<label for="upwd">确认密码:&nbsp;</label>
+			<input type="password" name="reupwd" id="upwd">
+			<input type="submit" value="确认">
+		</form> 
 	</div>
-	<!--内容部分end-->
 		<!--友情链接部分start-->
 		<div id="friend_link">
 			<!--友情链接标题部分start-->

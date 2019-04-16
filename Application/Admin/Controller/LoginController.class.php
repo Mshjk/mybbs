@@ -24,10 +24,13 @@ class LoginController extends Controller
 		$check_code = $verify->check($code);
 
 		// 判断验证码是否正确
-		if(!$check_code) {
+		if (!$check_code) {
 			$this->error('验证码错误');
 		}
 
+		if ($user['auth'] > 2) {
+			$this->error('对不起, 你无权进入');
+		}
 
 		if ($user && password_verify($upwd, $user['upwd'])) {
 			// 保存当前登录成功的用户信息
@@ -53,6 +56,8 @@ class LoginController extends Controller
 	// 获取验证码图片
 	public function getCode()
 	{
+		ob_clean();
+		
 		$config = [
 			'fontSize'  => 18,	  // 验证码字体大小
 			'length'    => 4,	  // 验证码位数

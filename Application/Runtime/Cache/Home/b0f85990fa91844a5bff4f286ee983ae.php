@@ -145,13 +145,13 @@
 				<em>1520</em>
 				<span class="pipe">|</span>
 				  帖子: 
-				<em>1520</em>
+				<em><?=$postAll?></em>
 				<span class="pipe">|</span>
 				  会员: 
-				<em>1520</em>
+				<em><?=$userAll?></em>
 				<span class="pipe">|</span>
 				  欢迎新会员: 
-				<em><a href="">1520</a></em>
+				<em><a href=""><?=$newUser?></a></em>
 			</div>
 			<!--统计部分end-->
 		</div>

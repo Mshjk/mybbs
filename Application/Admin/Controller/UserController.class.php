@@ -240,6 +240,67 @@ class UserController extends CommonController
 		}
 	}
 
+	// 显示修改密码-确认密码界面
+	public function editPass()
+	{
+		if (!isset($_SESSION['flag']) || !$_SESSION['flag']) {
+			$this->error('请先登录', '/index.php/admin/login/login');
+		}
+
+		$this->display();
+	}
+
+	// 修改密码-确认原密码
+	public function edit_pass()
+	{
+		if (!isset($_SESSION['flag']) || !$_SESSION['flag']) {
+			$this->error('请先登录', '/index.php/admin/login/login');
+		}
+		// 确认原密码是否正确
+		$upwd = $_POST['upwd'];
+		$uid = $_SESSION['userInfo']['uid'];
+
+		$yupwd = M('bbs_user')->field('upwd')->find($uid);
+
+		if (password_verify($upwd, $yupwd['upwd'])) {
+			$this->success('密码正确', '/index.php/admin/user/updatePass', 1);
+		} else {
+			$this->error('密码不对');
+		}
+	}
+
+	// 修改密码界面
+	public function updatePass()
+	{
+		$this->display();
+	}
+
+	// 修改密码
+	public function update_pass()
+	{
+		// 密码不能为空
+		if (empty($_POST['upwd']) || empty($_POST['reupwd'])) 
+		{
+			$this->error('密码不能为空');
+		}
+
+		if ($_POST['upwd'] != $_POST['reupwd']) {
+			$this->error('两次密码输入不一致');
+		}
+
+		$uid 		  = $_SESSION['userInfo']['uid'];
+		$data['uid']  = $uid;
+		$data['upwd'] = password_hash($_POST['upwd'], PASSWORD_DEFAULT);
+
+		$row 		  = M('bbs_user')->save($data);
+
+		if ($row) {
+			$this->success('密码修改成功', '/index.php/admin');
+		} else {
+			$this->error('密码修改失败');
+		}
+	}
+
 	// 生成缩略图
 	private function doSm($thumb_name)
 	{

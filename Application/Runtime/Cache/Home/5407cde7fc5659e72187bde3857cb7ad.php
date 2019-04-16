@@ -41,7 +41,7 @@
  if ($_SESSION['userInfo']['auth'] < 3) { ?>
 				<a href="/index.php/admin/index">进入后台 | </a>
 				<?php } ?>
-				<a href=""><?=$_SESSION['userInfo']['username']?>
+				<a href="/index.php/home/User/index"><?=$_SESSION['userInfo']['username']?>
 				</a> | <a href="/index.php/home/login/logout">退出登录</a>
 			</div>
 			<?php } else { ?>
@@ -88,41 +88,44 @@
 		</div>
 		<!--菜单部分end-->
 		<!--搜索部分start-->
-		<div id="search">
-			<table cellpadding="0" cellspacing="0">
-			<tr>
-				<td class="search_ico">
-				</td>
-				<td class="search_input">
-					<input type="text" name="search" x-webkit-speech speech placeholder="请输入搜索内容"/>
-				</td>
-				<td class="search_select">
-					<a href="">帖子</a>
-					<span class="select"></span>
-				</td>
-				<td class="search_btn">
-					<button>搜索</button>
-				</td>
-				<td class="search_hot">
-					<div>
-						<strong>热搜:</strong>
-						<a href="">交友</a>
-						<a href="">教育</a>
-						<a href="">幽默</a>
-						<a href="">搞笑</a>
-						<a href="">房产</a>
-						<a href="">购物</a>
-						<a href="">二手</a>
-						<a href="">衣服</a>
-						<a href="">鞋子</a>
-						<a href="">帮助</a>
-						<a href="">折扣</a>
-						<a href="">电影</a>
-					</div>
-				</td>
-			</tr>
-			</table>
-		</div>
+		<form action="/index.php/home/post/index" method="post">
+			<div id="search">
+				<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td class="search_ico">
+					</td>
+					<td class="search_input">
+						<input type="hidden" name="s" value="biaoji">
+						<input type="text" name="title" x-webkit-speech speech placeholder="请输入搜索内容"/>
+					</td>
+					<td class="search_select">
+						<a href="">帖子</a>
+						<span class="select"></span>
+					</td>
+					<td class="search_btn">
+						<input type="submit" value="搜索">
+					</td>
+					<td class="search_hot">
+						<div>
+							<strong>热搜:</strong>
+							<a href="">交友</a>
+							<a href="">教育</a>
+							<a href="">幽默</a>
+							<a href="">搞笑</a>
+							<a href="">房产</a>
+							<a href="">购物</a>
+							<a href="">二手</a>
+							<a href="">衣服</a>
+							<a href="">鞋子</a>
+							<a href="">帮助</a>
+							<a href="">折扣</a>
+							<a href="">电影</a>
+						</div>
+					</td>
+				</tr>
+				</table>
+			</div>
+		</form>
 		<!--搜索部分end-->
 		<!--小提示部分start-->
 		<div id="tip">
@@ -135,20 +138,17 @@
 			<!--路径部分end-->
 			<!--统计部分start-->
 			<div id="count">
-				  今日: 
-				<em>1520</em>
+				  今日活跃贴子: 
+				<em><?=$newPost?></em>
 				<span class="pipe">|</span>
-				  昨日: 
-				<em>1520</em>
+				  贴子总数: 
+				<em><?=$postAll?></em>
 				<span class="pipe">|</span>
-				  帖子: 
-				<em>1520</em>
-				<span class="pipe">|</span>
-				  会员: 
-				<em>1520</em>
+				  会员总数: 
+				<em><?=$userAll?></em>
 				<span class="pipe">|</span>
 				  欢迎新会员: 
-				<em><a href="">1520</a></em>
+				<em><a href=""><?=$newUser?></a></em>
 			</div>
 			<!--统计部分end-->
 		</div>
